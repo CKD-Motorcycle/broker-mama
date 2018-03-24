@@ -48,6 +48,8 @@ Grid.rowconfigure(content,0,weight=1)
 mplot=Frame(content,bg="black")
 mplot.grid(row=0,column=1,sticky=N+E+W+S,padx=5,pady=5)
 Grid.columnconfigure(content,1,weight=15)
+plottitle=Label(mplot,text='Sony',bg=dark,fg=sec_accent)
+plottitle.pack(side=TOP,fill=X,expand=1)
 pic=Image.open('grph.png')
 photo=ImageTk.PhotoImage(pic)
 plt=Label(mplot,background=dark,image=photo)
@@ -72,6 +74,7 @@ def plot(table):
     photo=ImageTk.PhotoImage(Image.open(table+'.png'))
     plt.configure(image=photo)
     plt.image=photo
+    plottitle.configure(text=table.title())
     main.update()
 #company list column
 comp=Frame(content,bg=dark)
@@ -82,7 +85,6 @@ comp_list=['apple','google','amazon','microsoft','sony']
 
 for ind,c in enumerate(comp_list):
     Button(comp,text=c.title(),font="Times 13",fg=accent,bd=0,highlightbackground=dark,bg=sec_accent,command=lambda i=c: plot(i),padx=0,pady=0).pack(fill=BOTH,expand=1)
-
 
 #trends column
 trend=Frame(content,bg=sec_accent)
