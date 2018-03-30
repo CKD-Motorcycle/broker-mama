@@ -35,7 +35,6 @@ Grid.rowconfigure(main,0,weight=0)
 
 title=Label(tit,text="Broker Mama",font="Times 20 bold italic",bg=accent,fg="white").pack(fill=BOTH,expand=1)
 
-settings=Button(tit,text="settings",bitmap="info",bg=dark,fg=sec_accent).pack(side=RIGHT)
 
 #content frame---------------------------
 content=Frame(main,bg=dark)
@@ -50,7 +49,7 @@ mplot.grid(row=0,column=1,sticky=N+E+W+S,padx=5,pady=5)
 Grid.columnconfigure(content,1,weight=15)
 plottitle=Label(mplot,text='Sony',bg=dark,fg=sec_accent)
 plottitle.pack(side=TOP,fill=X,expand=1)
-pic=Image.open('grph.png')
+pic=Image.open('sony.png')
 photo=ImageTk.PhotoImage(pic)
 plt=Label(mplot,background=dark,image=photo)
 plt.image=photo
